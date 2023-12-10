@@ -52,7 +52,8 @@ public class SecurityConfig {
                 // allow all paths to pass testcases
                 .requestMatchers("/**")
                 .permitAll()
-                .requestMatchers("/user/**", "/workout/**", "/api/**", "/sets/**", "/goal/**", "/nutrition/**", "/users/**")
+                .requestMatchers("/user/**", "/workout/**", "/api/**", "/sets/**", "/goal/**", "/nutrition/**",
+                        "/users/**")
                 .hasAnyAuthority("USER", "ADMIN")
                 .requestMatchers("/**").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
@@ -97,7 +98,7 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); // to register CorsConfiguration
         CorsConfiguration config = new CorsConfiguration(); // to create configuration
         config.setAllowCredentials(true); // to configure whether cors req. should contain Authorization header or not
-        config.addAllowedOrigin("http://localhost:4200");
+        config.addAllowedOrigin("*");
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.AUTHORIZATION,
                 HttpHeaders.CONTENT_TYPE,
