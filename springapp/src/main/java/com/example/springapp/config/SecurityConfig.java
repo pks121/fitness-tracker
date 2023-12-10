@@ -98,7 +98,7 @@ public class SecurityConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource(); // to register CorsConfiguration
         CorsConfiguration config = new CorsConfiguration(); // to create configuration
         config.setAllowCredentials(true); // to configure whether cors req. should contain Authorization header or not
-        config.addAllowedOrigin("*");
+        config.addAllowedOrigin("https://pks121.github.io/");
         config.setAllowedHeaders(Arrays.asList(
                 HttpHeaders.AUTHORIZATION,
                 HttpHeaders.CONTENT_TYPE,
